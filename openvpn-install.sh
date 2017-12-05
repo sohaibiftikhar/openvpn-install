@@ -412,6 +412,7 @@ verb 3" > /etc/openvpn/client-common.txt
 	# Generates the custom client.ovpn
 	newclient "$CLIENT"
 	echo ""
+	# iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 	echo "Finished!"
 	echo ""
 	echo "Your client configuration is available at" ~/"$CLIENT.ovpn"
